@@ -250,16 +250,20 @@ def convert_tile_annotations_toinfos(ann_file, val_num_rate, infos_save_dir,
 
     total_annotations = {}
     total_infos = []
+    
     for annotation in text:
-        if annotation['name'] not in total_annotations.keys():
-            total_annotations[annotation['name']] = [
-                annotation['image_height'], annotation['image_width'],
-                [annotation['category']], [annotation['bbox']]
+        if annotation == "info" or annotation == "licenses":
+            continue
+#         import pdb;pdb.set_trace()
+        if annotation['file_name'] not in total_annotations.keys():
+            total_annotations[annotation['file_name']] = [
+                annotation['height'], annotation['width'],
+                [annotation['category_id']], [annotation['bbox']]
             ]
         else:
-            total_annotations[annotation['name']][2].append(
-                annotation['category'])
-            total_annotations[annotation['name']][3].append(annotation['bbox'])
+            total_annotations[annotation['file_name']][2].append(
+                annotation['category_id'])
+            total_annotations[annotation['file_name']][3].append(annotation['bbox'])
 
     for file_name in total_annotations.keys():
         file_info = total_annotations[file_name]

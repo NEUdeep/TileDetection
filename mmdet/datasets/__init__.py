@@ -13,6 +13,8 @@ from .wider_face import WIDERFaceDataset
 from .xml_style import XMLDataset
 from .tile import TileDataset
 from .tile_test_dataset import TileTestDataset, TileTestDatasetV2, TileTestDatasetV3
+from .openBrand import OpenBrandDataset
+
 
 __all__ = [
     'CustomDataset', 'XMLDataset', 'CocoDataset', 'DeepFashionDataset',
@@ -21,5 +23,5 @@ __all__ = [
     'DistributedSampler', 'build_dataloader', 'ConcatDataset', 'RepeatDataset',
     'ClassBalancedDataset', 'WIDERFaceDataset', 'DATASETS', 'PIPELINES',
     'build_dataset', 'replace_ImageToTensor', 'TileDataset', 'TileTestDataset',
-    'TileTestDatasetV2', 'TileTestDatasetV3', 'MyVOCDataset'
+    'TileTestDatasetV2', 'TileTestDatasetV3', 'MyVOCDataset','OpenBrandDataset'
 ]

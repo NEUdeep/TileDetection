@@ -1,10 +1,10 @@
-_base_ = ['../tile_round2/cascade_s50_rfp_mstrain_augv2.py', '../_base_/swa.py']
+_base_ = ['cascade_s50_rfp_mstrain_augv2-B.py', 'configs/_base_/swa.py']
 
 only_swa_training = True
 # whether to perform swa training
 swa_training = True
 # load the best pre_trained model as the starting model for swa training
-swa_load_from = '/root/neu-lab/TileDetection/work_dirs/round2/cascade_s50_rfp_mstrain_aug_alldata_v2/latest.pth'
+swa_load_from = '/work/work_dirs/round2/cascade_s50_rfp_mstrain_aug_alldata_v2/latest.pth'
 swa_resume_from = None
 
 # swa optimizer
@@ -21,4 +21,4 @@ swa_total_epochs = 12
 
 # swa checkpoint setting
 swa_checkpoint_config = dict(interval=2, filename_tmpl='swa_epoch_{}.pth')
-work_dir = '/root/neu-lab/TileDetection/work_dirs/round2/swa_cascade_s50_rfp_mstrain_aug_v2'
+work_dir = '/work/work_dirs/round2/swa_cascade_s50_rfp_mstrain_aug_v2-B'

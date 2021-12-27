@@ -40,7 +40,7 @@ def parse_args():
         nargs='+',
         help='ids of gpus to use '
         '(only applicable to non-distributed training)')
-    parser.add_argument('--seed', type=str, default=None, help='random seed')
+    parser.add_argument('--seed', type=int, default=20, help='random seed')
     parser.add_argument(
         '--deterministic',
         action='store_true',
@@ -159,7 +159,7 @@ def main():
     # log some basic info
     logger.info(f'Distributed training: {distributed}')
 
-    seed = args.seed = torch.initial_seed()
+    seed = args.seed #= torch.initial_seed()
     set_random_seed(seed, deterministic=args.deterministic)
     logger.info(f'Current random seed is {seed}, '
                 f'deterministic: {args.deterministic}')

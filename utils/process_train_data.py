@@ -3,7 +3,7 @@ import os
 
 if __name__ == '__main__':
     root_path = get_root_path()
-    train_folder = '/work/data/data_guangdong/tile_round2'
+    train_folder = '/root/neu-lab'
     # train_img_dir = os.path.join(train_folder, 'train_imgs')
     # saved_img_dir = os.path.join(train_folder, 'croped_slide_train_win1650')
 
@@ -30,7 +30,7 @@ if __name__ == '__main__':
 
     # third generate the train anno infos in pickle format
     convert_tile_annotations_toinfos(
-        ann_file=os.path.join(train_folder, 'train_annos.json'),
+        ann_file=os.path.join(train_folder, 'train.json'),
         val_num_rate=0.1,
         infos_save_dir=os.path.join(train_folder, 'infos'),
         train_info_name='train.pkl',
